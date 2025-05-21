@@ -1,0 +1,7 @@
+
+<input type="text" [(ngModel)]="next_item"/>
+<button (click)="add_item()">Add</button>
+<div *ngFor = "let todoItem of this.todoService.todoList; index as i">
+    <app-todo-component [index]="i" [todoItem] = "todoItem"></app-todo-component>
+</div>
+
