@@ -3,9 +3,12 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { TodoService } from '../../services/todo.service';
 import { TodoComponentComponent } from '../todo-component/todo-component.component';
+
+import {CdkDragDrop, CdkDropList, CdkDrag, moveItemInArray,} from '@angular/cdk/drag-drop'; 
+import { NgbAlert } from '@ng-bootstrap/ng-bootstrap';
 @Component({
   selector: 'app-manage',
-  imports: [CommonModule, FormsModule, TodoComponentComponent],
+  imports: [CommonModule, FormsModule, TodoComponentComponent, CdkDropList, CdkDrag],
   templateUrl: './manage.component.html',
   styleUrl: './manage.component.css'
 })
@@ -16,7 +19,12 @@ export class ManageComponent {
   add_item(): void {
     this.todoService.add_item({msg: this.next_item});
   }
-
+    drop(event: CdkDragDrop<string[]>) {
+    moveItemInArray(this.todoService.todoList, event.previousIndex, event.currentIndex);
+    console.log(this.todoService.todoList)
+    let x='<app-todo-component  [index]="i" [todoItem] = "todoItem" ></app-todo-component >'
+    
+  }
   
 
 }

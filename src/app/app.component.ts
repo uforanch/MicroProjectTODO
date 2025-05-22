@@ -11,4 +11,5 @@ import { NavbarComponentComponent } from './components/navbar-component/navbar-c
 })
 export class AppComponent {
   title = 'microprojectTodo';
+  todo: String[] = [];
 }
