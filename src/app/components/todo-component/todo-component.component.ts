@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Optional } from '@angular/core';
 import { TodoItem } from '../../interfaces/todo-item';
 import { TodoService } from '../../services/todo.service';
 import {ToastrService} from 'ngx-toastr' 
@@ -14,6 +14,11 @@ export class TodoComponentComponent {
   @Input() todoItem!: TodoItem
   @Input() index!: number
   @Input() buttonsOn!: boolean
-  constructor(public todoService: TodoService){}//, private toastrServer: ToastrService){}
-  remove_self():void{this.todoService.remove_item(this.index);}// this.toastrServer.success('You deleted "${this.todoItem.msg}"')}
+  @Input() onRemove?:(arg0: String)=>void
+  constructor(public todoService: TodoService){}
+  remove_self():void{
+    if (this.onRemove){
+      this.onRemove(this.todoItem.msg)
+    }
+    this.todoService.remove_item(this.index);}
 }
