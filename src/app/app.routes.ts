@@ -3,5 +3,6 @@ import { ManageComponent} from './components/manage/manage.component';
 import { DeleteComponent } from './components/delete/delete.component';
 export const routes: Routes = [
 {path:"manage", component:ManageComponent},
-{path:"delete", component:DeleteComponent}
+{path:"delete", component:DeleteComponent},
+{path:"", redirectTo:"/manage", pathMatch:"full"}
 ];

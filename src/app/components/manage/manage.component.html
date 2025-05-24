@@ -1,9 +1,12 @@
 
 <input type="text" [(ngModel)]="next_item"/>
 <button (click)="add_item()">Add</button>
-<div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)"  *ngFor = "let todoItem of this.todoService.todoList; index as i">
-    <div class="example-box" cdkDrag >
-    <app-todo-component  [index]="i" [todoItem] = "todoItem" ></app-todo-component >
+<div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)" >
+ @for (todoItem of todoService.todoList; track todoItem; let i = $index; ) {
+    
+   <div class="example-box" cdkDrag >
+    <app-todo-component  [index]="i" [todoItem] = "todoItem" [buttonsOn]="false"></app-todo-component >
     </div>
+  }
 </div>
 

@@ -1,9 +1,9 @@
-<p>delete works!</p>
 
-<div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
-  @for (movie of movies; track movie;) {
+
+<div cdkDropList class="example-list"   *ngFor = "let todoItem of this.todoService.todoList; index as i">
+
+    <div class="example-box"  >
+    <app-todo-component  [index]="i" [todoItem] = "todoItem" [buttonsOn]="true" ></app-todo-component >
+    </div>
     
-    <div class="example-box" cdkDrag><div class="card position-relative shadow-lg text-center bg-dark m-1" style="width: 18rem">
-{{movie}}</div></div>
-  }
 </div>
