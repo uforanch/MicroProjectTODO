@@ -7,9 +7,9 @@ export class TodoService {
   public todoList: TodoItem[] = [];
 
   constructor() {
-    this.todoList.push({msg: "huh?"})
+    //this.todoList.push({msg: "huh?"})//debug
     
-    this.todoList.push({msg: "what?"})
+    //this.todoList.push({msg: "what?"})//debug
    }
 
    add_item(todoItem:TodoItem): void{

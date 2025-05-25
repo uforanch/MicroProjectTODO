@@ -1,10 +1,10 @@
 
 
-<div cdkDropList class="example-list"   *ngFor = "let todoItem of this.todoService.todoList; index as i">
+<div  class="example-list"   *ngFor = "let todoItem of this.todoService.todoList; index as i" >
 
 <div class="card position-relative shadow-lg text-center bg-dark m-1" style="width: 18rem">
-
-     <button class="btn-close btn-close-white position-absolute end-0 m-1"  (click)="removeItem(i, todoItem.msg)"></button>
+      
+   <button class="btn-close btn-close-white position-absolute end-0 m-1"  (click)="removeItem(i, todoItem.msg)" ></button>
 
     <!-- Card Body -->
      <div class="example-box">
@@ -12,5 +12,6 @@
      </div>
 
 </div>
+
     
 </div>

@@ -1,6 +1,6 @@
 
-<input type="text" [(ngModel)]="next_item"/>
-<button (click)="add_item()">Add</button>
+<input type="text"  style="width: 16rem; margin: 1em " [(ngModel)]="next_item"/>
+<button class="btn btn-primary" (click)="add_item()">Add</button>
 <div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)" >
  @for (todoItem of todoService.todoList; track todoItem; let i = $index; ) {
     

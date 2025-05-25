@@ -1,8 +1,8 @@
-    <div class="example-box" cdkDrag >
-    <app-todo-component  [index]="i" [todoItem] = "todoItem" ></app-todo-component >
-    </div>
+[@fadeOut]="false"  (@fadeOut.done)="removeItem(i, todoItem.msg)"
 
-       <div class="example-box" cdkDrag><div class="card position-relative shadow-lg text-left bg-light m-1" style="width: 18rem">
-{{movie}}    <button class="btn-close btn-close-black position-absolute end-0 m-1" ></button>
-</div></div>
-  }
+
+  *ngFor="let todoItem of todoService.todoList; index as i"
+    [@fadeOut]="deleting[i] ? 'void' : '*'"
+    *ngIf="!deleting[i] || deleting[i]"
+    (@fadeOut.done)="onFadeOutDone(i, todoItem.msg)"
+  >
