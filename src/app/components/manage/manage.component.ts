@@ -17,6 +17,7 @@ export class ManageComponent {
 
   add_item(): void {
     this.todoService.add_item({msg: this.next_item});
+    this.next_item = "";
   }
   
   drop(event: CdkDragDrop<string[]>) {

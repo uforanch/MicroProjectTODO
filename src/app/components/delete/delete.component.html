@@ -7,7 +7,7 @@
    <button class="btn-close btn-close-white position-absolute end-0 m-1"  (click)="removeItem(i, todoItem.msg)" ></button>
 
     <!-- Card Body -->
-     <div class="example-box">
+     <div class="example-box" @fadeOut style="display: block;">
         <p class="text-light">{{i + " : " + todoItem.msg}}</p>
      </div>
 

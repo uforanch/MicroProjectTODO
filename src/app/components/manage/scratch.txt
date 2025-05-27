@@ -1,3 +1,35 @@
+
+
+<div *ngIf="!!deleting[i]" (@fadeOut.done)="removeItem(i, todoItem.msg)" @fadeOut>
+<div class="card position-relative shadow-lg text-center bg-dark m-1" style="width: 18rem">
+      
+     <button class="btn-close btn-close-white position-absolute end-0 m-1"   ></button>
+
+    <!-- Card Body -->
+     <div class="example-box">
+        <p class="text-light">{{i + " : " + todoItem.msg}}</p>
+     </div>
+
+</div>
+</div>
+
+   
+<div *ngIf="!deleting[i]" >
+<div class="card position-relative shadow-lg text-center bg-dark m-1" style="width: 18rem">
+      
+     <button class="btn-close btn-close-white position-absolute end-0 m-1"  (click)="markForDelete(i)" ></button>
+
+    <!-- Card Body -->
+     <div class="example-box">
+        <p class="text-light">{{i + " : " + todoItem.msg}}</p>
+     </div>
+
+</div>
+</div>
+
+
+----
+
 [@fadeOut]="false"  (@fadeOut.done)="removeItem(i, todoItem.msg)"
 
 
